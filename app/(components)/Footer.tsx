@@ -25,7 +25,7 @@ export default function Footer() {
 						<Link href={obj.href}>
 							<FontAwesomeIcon
 								icon={obj.icon}
-								className="h-full w-[30px] p-1"
+								className="h-full w-[20px] p-1"
 							/>
 						</Link>
 					</li>
