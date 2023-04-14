@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { Encode_Sans } from "next/font/google";
-import Link from "next/link";
-import Footer from "./(components)/Footer";
+import Footer from "./(components)/Aside";
 import Header from "./(components)/Header";
 import Nav from "./(components)/Nav";
 import { Providers } from "./(components)/Providers";
+import Aside from "./(components)/Aside";
 
 const encodeSans = Encode_Sans({
-	subsets: ["latin"],
+	subsets: ["latin", "latin-ext"],
 	variable: "--font-encode",
 	display: "swap",
 });
@@ -39,16 +39,23 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${encodeSans.variable}`}
+			className={`${encodeSans.variable} `}
 			suppressHydrationWarning>
-			<body className=" min-h-screen w-screen min-w-[320px] ">
+			<body className=" min-h-screen min-w-[320px] [&>*]:bg-neutral-50 [&>*]:transition [&>*]:duration-700 [&>*]:dark:bg-zinc-900 [&_*]:text-inherit">
 				<Providers>
-					<div className=" flex h-screen w-screen place-content-center bg-white px-3 transition delay-200 ease-in dark:bg-zinc-900">
-						<div className="grid w-full max-w-screen-2xl grid-cols-[80px_auto] grid-rows-[80px_auto_max-content]">
+					<div className="fixed z-40 flex w-full place-content-center">
+						<div className=" grid w-full max-w-screen-2xl grid-cols-[80px_1fr] grid-rows-[60px]">
 							<Header />
 							<Nav />
-							<Footer />
-							<main className="h-full min-h-[200px] max-md:col-span-2 max-md:row-start-2 max-md:px-2 md:border-l md:px-4">
+						</div>
+					</div>
+
+					<div className=" flex min-h-screen w-full place-content-center ">
+						<div className="mt-[60px] grid w-full max-w-screen-2xl md:grid-cols-[80px_1fr]">
+							<div className="bg-neutral-50 transition duration-700 dark:bg-zinc-900 max-md:fixed max-md:bottom-0 max-md:left-0 max-md:w-full">
+								<Aside />
+							</div>
+							<main className=" border-zinc-200 py-[10px] px-4 dark:border-zinc-800 max-md:mb-[60px] md:border-l md:transition-[border] md:duration-700">
 								{children}
 							</main>
 						</div>

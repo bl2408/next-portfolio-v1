@@ -3,10 +3,10 @@ import { faAt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Aside() {
 	return (
-		<footer className="flex max-md:col-span-2 max-md:col-start-1 max-md:row-start-3 md:items-end">
-			<ul className="mb-8 flex w-full justify-center max-md:flex-wrap max-md:justify-around md:flex-col md:items-center md:gap-4">
+		<aside className=" max-md:h-[50px] max-md:w-full max-md:px-3 md:sticky md:top-[80px] md:flex md:h-[calc(100vh-80px)] md:min-h-[200px] md:items-end">
+			<ul className=" flex w-full justify-center max-md:flex-wrap max-md:justify-around max-md:p-2 md:mb-8 md:flex-col md:items-center md:gap-4">
 				{[
 					{
 						icon: faAt,
@@ -25,12 +25,12 @@ export default function Footer() {
 						<Link href={obj.href}>
 							<FontAwesomeIcon
 								icon={obj.icon}
-								className="h-full w-[20px] p-1"
+								className="h-full w-[16px] p-1"
 							/>
 						</Link>
 					</li>
 				))}
 			</ul>
-		</footer>
+		</aside>
 	);
 }

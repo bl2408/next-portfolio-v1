@@ -11,10 +11,12 @@ export default function ButtonTheme() {
 	};
 
 	return (
-		<button onClick={toggleTheme}>
+		<button
+			onClick={toggleTheme}
+			className={`aspect-square h-full flex-wrap items-center justify-center`}>
 			<FontAwesomeIcon
 				icon={faCircleHalfStroke}
-				className="h-full w-[20px] p-1"
+				className="h-full w-[16px] rotate-180 transition-transform dark:rotate-0"
 			/>
 		</button>
 	);

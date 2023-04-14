@@ -17,6 +17,9 @@ module.exports = {
 					"100svh",
 				],
 			},
+			// transitionProperty: {
+			// 	"border-color": "border-color",
+			// },
 		},
 	},
 	plugins: [],
