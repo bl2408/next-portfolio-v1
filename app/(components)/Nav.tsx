@@ -3,10 +3,15 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import ButtonTheme from "./ButtonTheme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Nav() {
 	const [menu, setMenu] = useState(false);
 	const [hamMenu, setHamMenu] = useState(false);
+	const menuItems = [
+		{ label: "About", to: "/" },
+		{ label: "Projects", to: "/" },
+	];
 
 	const toggleBodyScroll = (bool: boolean) => {
 		document.body.style.overflow = `${bool ? "auto" : "hidden"}`;
@@ -40,8 +45,11 @@ export default function Nav() {
 					className={`w-full gap-4 overflow-auto bg-neutral-50 text-center font-semibold uppercase transition duration-700 dark:bg-zinc-900 max-sm:absolute max-sm:top-[60px] max-sm:left-0 max-sm:h-[calc(100vh-60px-50px)] max-sm:flex-col sm:justify-end sm:text-xs [&>*]:p-2  ${
 						!hamMenu ? "flex" : menu ? "flex" : "hidden"
 					}`}>
-					<li>About</li>
-					<li>Projects</li>
+					{menuItems.map((item) => (
+						<li key={`${item.label}`}>
+							<Link href={item.to}>{item.label}</Link>
+						</li>
+					))}
 				</ul>
 
 				<ButtonTheme />
