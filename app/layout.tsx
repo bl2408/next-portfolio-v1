@@ -1,15 +1,19 @@
 import { Metadata } from "next";
 import "./globals.css";
-import { Encode_Sans } from "next/font/google";
-import Footer from "./(components)/Aside";
 import Header from "./(components)/Header";
 import Nav from "./(components)/Nav";
 import { Providers } from "./(components)/Providers";
 import Aside from "./(components)/Aside";
+import { Encode_Sans, Roboto_Mono } from "next/font/google";
 
 const encodeSans = Encode_Sans({
-	subsets: ["latin", "latin-ext"],
+	subsets: ["latin-ext"],
 	variable: "--font-encode",
+	display: "swap",
+});
+const robotoMono = Roboto_Mono({
+	subsets: ["latin-ext"],
+	variable: "--font-roboto-mono",
 	display: "swap",
 });
 
@@ -39,23 +43,37 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${encodeSans.variable} `}
+			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable}`}
 			suppressHydrationWarning>
-			<body className=" min-h-screen min-w-[320px] [&>*]:bg-neutral-50 [&>*]:transition [&>*]:duration-700 [&>*]:dark:bg-zinc-900 [&_*]:text-inherit">
+			<body
+				className="relative min-h-screen min-w-[320px] text-neutral-500 dark:text-neutral-400
+			max-sm:nav-open:overflow-hidden [&>*]:bg-neutral-50 [&>*]:trans-col-main-theme
+			[&>*]:dark:bg-zinc-900
+			">
 				<Providers>
-					<div className="fixed z-40 flex w-full place-content-center">
+					<div className="fixed z-40 flex w-full place-content-center text-black dark:text-white">
 						<div className=" grid w-full max-w-screen-2xl grid-cols-[80px_1fr] grid-rows-[60px]">
 							<Header />
-							<Nav />
+							<Nav
+								items={[
+									{ label: "about", to: "/" },
+									{ label: "projects", to: "/" },
+								]}
+							/>
 						</div>
 					</div>
 
 					<div className=" flex min-h-screen w-full place-content-center ">
 						<div className="mt-[60px] grid w-full max-w-screen-2xl md:grid-cols-[80px_1fr]">
-							<div className="bg-neutral-50 transition duration-700 dark:bg-zinc-900 max-md:fixed max-md:bottom-0 max-md:left-0 max-md:w-full">
+							<div
+								className="bg-neutral-50 text-black trans-col-main-theme dark:bg-zinc-900 dark:text-white max-md:fixed max-md:bottom-0
+							max-md:left-0 max-md:w-full">
 								<Aside />
 							</div>
-							<main className=" border-zinc-200 py-[10px] px-4 dark:border-zinc-800 max-md:mb-[60px] md:border-l md:transition-[border] md:duration-700">
+							<main
+								className=" border-zinc-200 py-[10px] px-4 dark:border-zinc-800
+							 max-md:mb-[60px] md:border-l
+							 ">
 								{children}
 							</main>
 						</div>

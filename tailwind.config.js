@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	darkMode: "class",
 	content: [
@@ -7,9 +10,15 @@ module.exports = {
 		"./components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
+		screens: {
+			"2xs": "360px",
+			xs: "475px",
+			...defaultTheme.screens,
+		},
 		extend: {
 			fontFamily: {
 				sans: ["var(--font-encode)"],
+				mono: ["var(--font-roboto-mono)"],
 			},
 			minHeight: {
 				screen: [
@@ -17,10 +26,20 @@ module.exports = {
 					"100svh",
 				],
 			},
-			// transitionProperty: {
-			// 	"border-color": "border-color",
-			// },
 		},
 	},
-	plugins: [],
+	plugins: [
+		require(`./tailwind-plugins/highlightFx`),
+		plugin(({ addVariant, addUtilities }) => {
+			addVariant("nav-open", ["html.nav-open &"]);
+			addUtilities({
+				".trans-col-main-theme": {
+					transitionProperty:
+						"color, background-color, border-color, text-decoration-color,",
+					transitionDuration: "300ms",
+					transitionTimingFunction: "linear",
+				},
+			});
+		}),
+	],
 };
