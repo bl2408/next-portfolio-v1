@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faAt } from "@fortawesome/free-solid-svg-icons";
+import { faAt, faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
@@ -20,12 +20,16 @@ export default function Aside() {
 						icon: faLinkedin,
 						href: "/",
 					},
+					{
+						icon: faCode,
+						href: "/",
+					},
 				].map((obj, i) => (
 					<li key={i} className="">
-						<Link href={obj.href}>
+						<Link href={obj.href} className="[&>*]:hover:scale-125">
 							<FontAwesomeIcon
 								icon={obj.icon}
-								className="h-full w-[16px] p-1"
+								className="h-full w-[16px] p-1 transition-transform"
 							/>
 						</Link>
 					</li>

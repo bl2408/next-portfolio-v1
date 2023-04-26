@@ -2,6 +2,7 @@
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import ButtonIcon from "../ButtonIcon";
 
 export default function NavHamburger() {
 	const [menu, setMenu] = useState(false);
@@ -39,14 +40,10 @@ export default function NavHamburger() {
 	}, []);
 
 	return (
-		<button
-			className="aspect-square h-full flex-wrap items-center justify-center p-4 max-sm:flex sm:hidden"
-			onClick={() => toggleMenu(null)}>
-			{menu ? (
-				<FontAwesomeIcon icon={faXmark} />
-			) : (
-				<FontAwesomeIcon icon={faBars} />
-			)}
-		</button>
+		<ButtonIcon
+			icon={menu ? faXmark : faBars}
+			onClick={() => toggleMenu(null)}
+			className="max-sm:flex sm:hidden"
+		/>
 	);
 }

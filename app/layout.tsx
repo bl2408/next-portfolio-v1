@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import "./globals.css";
-import Header from "./(components)/Header";
-import Nav from "./(components)/Nav";
+import Header from "./Header";
+import Nav from "./(components)/Nav/Nav";
 import { Providers } from "./(components)/Providers";
 import Aside from "./(components)/Aside";
 import { Encode_Sans, Roboto_Mono } from "next/font/google";
@@ -71,8 +71,8 @@ export default function RootLayout({
 								<Aside />
 							</div>
 							<main
-								className=" border-zinc-200 py-[10px] px-4 dark:border-zinc-800
-							 max-md:mb-[60px] md:border-l
+								className=" border-zinc-200 px-4 py-[10px] transition-[border]
+							 dark:border-zinc-800 max-md:mb-[60px] md:border-l
 							 ">
 								{children}
 							</main>
