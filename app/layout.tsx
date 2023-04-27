@@ -71,8 +71,8 @@ export default function RootLayout({
 								<Aside />
 							</div>
 							<main
-								className=" border-zinc-200 px-4 py-[10px] transition-[border]
-							 dark:border-zinc-800 max-md:mb-[60px] md:border-l
+								className=" mb-40 border-zinc-200 py-[10px] transition-[border]
+							 dark:border-zinc-800 max-md:mb-[60px] max-md:px-6 md:border-l md:px-4
 							 ">
 								{children}
 							</main>
