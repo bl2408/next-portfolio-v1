@@ -15,7 +15,7 @@ export default function SectionProjects() {
 				<div>4</div>
 			</div>
 			<div className="text-center">
-				<ButtonNormal label={"See more"} />
+				<ButtonNormal label={"See more"} href="/" />
 			</div>
 		</section>
 	);

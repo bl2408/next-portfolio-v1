@@ -26,8 +26,8 @@ export default function Splash() {
 						further.
 					</p>
 					<p className="mt-10 grid gap-4 xs:grid-cols-2">
-						<ButtonHl label={"See my work"} />
-						<ButtonNormal label={"Say hello"} />
+						<ButtonHl label={"See my work"} href="/" />
+						<ButtonNormal label={"Say hello"} href="/" />
 					</p>
 				</div>
 			</div>
