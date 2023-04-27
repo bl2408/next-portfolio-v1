@@ -66,8 +66,8 @@ export default function RootLayout({
 					<div className=" flex min-h-screen w-full place-content-center ">
 						<div className="mt-[60px] grid w-full max-w-screen-2xl md:grid-cols-[80px_1fr]">
 							<div
-								className="bg-neutral-50 text-black trans-col-main-theme dark:bg-zinc-900 dark:text-white max-md:fixed max-md:bottom-0
-							max-md:left-0 max-md:w-full">
+								className="z-10 bg-neutral-50 text-black trans-col-main-theme dark:bg-zinc-900 dark:text-white max-md:fixed
+							max-md:bottom-0 max-md:left-0 max-md:w-full">
 								<Aside />
 							</div>
 							<main
