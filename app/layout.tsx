@@ -34,6 +34,8 @@ export const metadata: Metadata = {
 		width: "device-width",
 	},
 };
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default function RootLayout({
 	children,
