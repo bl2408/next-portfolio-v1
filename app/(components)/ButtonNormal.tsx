@@ -1,3 +1,4 @@
+import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
 export default function ButtonNormal({
@@ -7,7 +8,7 @@ export default function ButtonNormal({
 }: {
 	label: string;
 	className?: string | undefined;
-	href: string;
+	href: Url;
 }) {
 	return (
 		<Link

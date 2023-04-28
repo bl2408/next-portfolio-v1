@@ -21,12 +21,12 @@ export default function Splash() {
 				<div className="mt-2 h-[1px] animate-hl1 hlGradient1"></div>
 				<div className="max-w-[600px]">
 					<p className="mt-8 text-zinc-400 ">
-						Always eager to learn and to grow as a professional,
+						Eager to learn and to grow as a professional,
 						continuously seeking out new challenges to push myself
 						further.
 					</p>
 					<p className="mt-10 grid gap-4 xs:grid-cols-2">
-						<ButtonHl label={"See my work"} href="/" />
+						<ButtonHl label={"See my work"} href="#projects" />
 						<ButtonNormal label={"Say hello"} href="/" />
 					</p>
 				</div>

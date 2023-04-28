@@ -1,3 +1,4 @@
+import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
 
 export default function ButtonHl({
@@ -7,7 +8,7 @@ export default function ButtonHl({
 }: {
 	label: string;
 	className?: string | undefined;
-	href: string;
+	href: Url;
 }) {
 	return (
 		<Link
@@ -20,7 +21,7 @@ export default function ButtonHl({
 						duration-1000 hlGradient1 hover:bg-[99%_99%]
 						dark:shadow-[0_0_0_1px_rgba(255,255,255,0.2)]
 						[&>*]:hover:opacity-90 [&>*]:active:opacity-100 
-						${className}
+						${className} 
 		    `}>
 			<span
 				className="duration-50 flex h-full w-full items-center justify-center rounded-md bg-neutral-50 

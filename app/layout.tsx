@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import "./globals.css";
+import { Metadata } from "next";
 import Header from "./Header";
 import Nav from "./(components)/Nav/Nav";
 import { Providers } from "./(components)/Providers";
@@ -43,12 +43,12 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable}`}
+			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable} scroll-smooth`}
 			suppressHydrationWarning>
 			<body
-				className="relative min-h-screen min-w-[320px] text-neutral-500 dark:text-neutral-400
-			max-sm:nav-open:overflow-hidden [&>*]:bg-neutral-50 [&>*]:trans-col-main-theme
-			[&>*]:dark:bg-zinc-900
+				className="relative min-h-screen min-w-[320px]  overflow-auto
+			text-neutral-500 dark:text-neutral-400 max-sm:nav-open:overflow-hidden
+			[&>*]:bg-neutral-50 [&>*]:trans-col-main-theme [&>*]:dark:bg-zinc-900
 			">
 				<Providers>
 					<div className="fixed z-40 flex w-full place-content-center text-black dark:text-white">
@@ -57,7 +57,7 @@ export default function RootLayout({
 							<Nav
 								items={[
 									{ label: "about", to: "/" },
-									{ label: "projects", to: "/" },
+									{ label: "projects", to: "#projects" },
 								]}
 							/>
 						</div>
