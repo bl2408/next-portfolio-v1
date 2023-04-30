@@ -45,7 +45,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable} scroll-smooth`}
+			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable} [scroll-behavior:smooth!important]`}
 			suppressHydrationWarning>
 			<body
 				className="relative min-h-screen min-w-[320px]  overflow-auto
