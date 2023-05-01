@@ -6,7 +6,7 @@ export default function Header() {
 			<Link href={"/"} className="w-[45px]">
 				<img
 					className=" max-h-full max-w-full"
-					src="./logo-bl.svg"
+					src="/logo-bl.svg"
 					alt="BL Logo"
 				/>
 			</Link>

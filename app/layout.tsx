@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 	title: "Brian Lambert",
 	description: "",
 	icons: {
-		icon: "./logo-bl.svg",
-		shortcut: "./logo-bl.svg",
-		apple: "./logo-bl.svg",
+		icon: "/logo-bl.svg",
+		shortcut: "/logo-bl.svg",
+		apple: "/logo-bl.svg",
 		other: {
 			rel: "apple-touch-icon-precomposed",
-			url: "./logo-bl.svg",
+			url: "/logo-bl.svg",
 		},
 	},
 	viewport: {
@@ -34,8 +34,6 @@ export const metadata: Metadata = {
 		width: "device-width",
 	},
 };
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
 
 export default function RootLayout({
 	children,
