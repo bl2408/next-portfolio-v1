@@ -2,6 +2,9 @@ import ElementCube from "../components/misc/ElementCube";
 import SectionProjects from "../components/SectionProjects";
 import Splash from "../components/Splash";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function Page() {
 	return (
 		<>
