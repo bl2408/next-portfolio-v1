@@ -1,5 +1,5 @@
-import ButtonNormal from "./ButtonNormal";
-import ElementTitle from "./ElementTitle";
+import Link from "next/link";
+import ElementTitle from "./misc/ElementTitle";
 
 export default function SectionProjects() {
 	return (
@@ -15,7 +15,9 @@ export default function SectionProjects() {
 				<div>4</div>
 			</div>
 			<div className="text-center">
-				<ButtonNormal label={"See more"} href="/" />
+				<Link href={"/projects"} className="btn-hl">
+					See more
+				</Link>
 			</div>
 		</section>
 	);

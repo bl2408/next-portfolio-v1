@@ -1,6 +1,3 @@
-import ButtonHl from "./ButtonHl";
-import ButtonNormal from "./ButtonNormal";
-
 export default function Splash() {
 	return (
 		<div className="flex h-[calc(100vh-140px)] min-h-[400px] w-full items-center justify-center">
@@ -26,8 +23,12 @@ export default function Splash() {
 						further.
 					</p>
 					<p className="mt-10 grid gap-4 xs:grid-cols-2">
-						<ButtonHl label={"See my work"} href="#projects" />
-						<ButtonNormal label={"Say hello"} href="/" />
+						<a href="#projects" className="btn-hl">
+							See my work
+						</a>
+						<a href="/" className="btn-basic">
+							Say hello
+						</a>
 					</p>
 				</div>
 			</div>

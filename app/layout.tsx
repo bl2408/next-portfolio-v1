@@ -1,9 +1,9 @@
 import "./globals.css";
 import { Metadata } from "next";
 import Header from "./Header";
-import Nav from "./(components)/Nav/Nav";
-import { Providers } from "./(components)/Providers";
-import Aside from "./(components)/Aside";
+import Nav from "../components/nav/Nav";
+import { Providers } from "../components/misc/Providers";
+import Aside from "../components/Aside";
 import { Encode_Sans, Roboto_Mono } from "next/font/google";
 
 const encodeSans = Encode_Sans({
@@ -45,39 +45,44 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable} [scroll-behavior:smooth!important]`}
+			className={`${encodeSans.className} ${encodeSans.variable} ${robotoMono.variable} scroll-pt-[var(--navTopHeight)] [scroll-behavior:smooth!important] [scrollbar-gutter:stable]`}
 			suppressHydrationWarning>
 			<body
-				className="relative min-h-screen min-w-[320px]  overflow-auto
-			text-neutral-500 dark:text-neutral-400 max-sm:nav-open:overflow-hidden
-			[&>*]:bg-neutral-50 [&>*]:trans-col-main-theme [&>*]:dark:bg-zinc-900
+				className=" min-w-[320px] overflow-auto overscroll-y-contain bg-neutral-50 
+				 text-neutral-500 trans-col-main-theme dark:bg-zinc-900 dark:text-neutral-400 max-sm:nav-open:overflow-hidden
 			">
 				<Providers>
-					<div className="fixed z-40 flex w-full place-content-center text-black dark:text-white">
-						<div className=" grid w-full max-w-screen-2xl grid-cols-[80px_1fr] grid-rows-[60px]">
+					<div className="mx-auto min-h-screen w-full max-w-screen-2xl trans-col-main-theme">
+						<div
+							className="sticky top-0 z-10 grid h-[var(--navTopHeight)] w-full grid-cols-[var(--navSideWidth)_1fr] 
+							bg-neutral-50 trans-col-main-theme dark:bg-zinc-900
+						">
 							<Header />
 							<Nav
+								className="border-zinc-200 trans-col-main-theme dark:border-zinc-800 
+								md:border-l"
 								items={[
 									{ label: "about", to: "/" },
-									{ label: "projects", to: "#projects" },
+									{ label: "projects", to: "projects" },
 								]}
 							/>
 						</div>
-					</div>
-
-					<div className=" flex min-h-screen w-full place-content-center ">
-						<div className="mt-[60px] grid w-full max-w-screen-2xl md:grid-cols-[80px_1fr]">
+						<div className="grid w-full md:grid-cols-[var(--navSideWidth)_1fr]">
 							<div
-								className="z-10 bg-neutral-50 text-black trans-col-main-theme dark:bg-zinc-900 dark:text-white max-md:fixed
-							max-md:bottom-0 max-md:left-0 max-md:w-full">
-								<Aside />
+								className="left-0 z-[9] w-full 
+									 max-md:fixed max-md:bottom-0 max-md:h-[var(--navBottomHeight)]
+									md:sticky md:top-[var(--navTopHeight)]
+									md:h-[calc(100vh-var(--navTopHeight))] md:min-h-[400px]
+									
+								">
+								<Aside className="bg-neutral-50 trans-col-main-theme dark:bg-zinc-900" />
 							</div>
-							<main
-								className=" mb-40 border-zinc-200 py-[10px] transition-[border]
-							 dark:border-zinc-800 max-md:mb-[60px] max-md:px-6 md:border-l md:px-4
-							 ">
+							<div
+								className="border-zinc-200 pb-[var(--contentBottomPad)]
+									trans-col-main-theme dark:border-zinc-800 max-md:px-6 md:border-l md:px-4
+								">
 								{children}
-							</main>
+							</div>
 						</div>
 					</div>
 				</Providers>

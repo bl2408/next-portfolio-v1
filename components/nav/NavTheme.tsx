@@ -1,7 +1,7 @@
 "use client";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "next-themes";
-import ButtonIcon from "../ButtonIcon";
+import ButtonIcon from "../misc/ButtonIcon";
 
 export default function NavTheme() {
 	const { theme, setTheme } = useTheme();

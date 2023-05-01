@@ -13,8 +13,11 @@ export default function ButtonIcon({
 	return (
 		<button
 			onClick={onClick}
-			className={`flex aspect-square h-full flex-wrap items-center justify-center [&>*]:hover:scale-125 ${className}`}>
-			<FontAwesomeIcon icon={icon} className="w-[16px] " />
+			className={`flex aspect-square h-full flex-wrap items-center justify-center [&>*]:hover:scale-125 [&>*]:hover:text-neutral-500 [&>*]:hover:dark:text-zinc-300 ${className}`}>
+			<FontAwesomeIcon
+				icon={icon}
+				className="w-[16px] text-black  dark:text-white"
+			/>
 		</button>
 	);
 }

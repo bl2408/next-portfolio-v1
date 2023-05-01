@@ -1,8 +1,7 @@
 "use client";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import ButtonIcon from "../ButtonIcon";
+import ButtonIcon from "../misc/ButtonIcon";
 
 export default function NavHamburger() {
 	const [menu, setMenu] = useState(false);
@@ -34,6 +33,16 @@ export default function NavHamburger() {
 	useEffect(() => {
 		toggleMenu("off");
 		window.addEventListener("resize", () => toggleMenu("off"));
+		const navHeaderLinks = document.querySelectorAll("#nav-header a");
+
+		if (!!navHeaderLinks) {
+			navHeaderLinks.forEach((link) =>
+				link.addEventListener("click", () => {
+					toggleMenu("off");
+				})
+			);
+		}
+
 		return () =>
 			window.removeEventListener("resize", () => toggleMenu("off"));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
