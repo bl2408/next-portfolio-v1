@@ -1,0 +1,9 @@
+{
+    "date": "2022-08-24",
+    "title": "Academy Xi Phase 4 Project",
+    "thumb": "axi-phase-4-thumbnail-400x400.png",
+    "tech": [
+        "HTML", "CSS", "Javascript", "React", "Ruby", "Rails", "Postgresql"
+    ],
+    "content": "this is content"
+}

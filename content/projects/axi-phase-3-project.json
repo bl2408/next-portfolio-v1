@@ -1,0 +1,9 @@
+{
+    "date": "2022-08-24",
+    "title": "Academy Xi Phase 3 Project",
+    "thumb": "axi-phase-3-thumbnail-400x400.png",
+    "tech": [
+        "HTML", "CSS", "Javascript", "React", "Ruby", "Sinatra", "SQLite"
+    ],
+    "content": "this is content"
+}

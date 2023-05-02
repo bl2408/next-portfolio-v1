@@ -1,5 +1,10 @@
 {
     "date": "2022-08-24",
     "title": "Academy Xi Phase 0 Project",
+    "thumb": "axi-phase-0-thumbnail-400x400.png",
+    "shortDesc": "Tasked to create a portfolio using only html and css.",
+    "tech": [
+        "HTML", "CSS", "Javascript"
+    ],
     "content": "this is content"
 }
