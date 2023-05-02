@@ -1,3 +1,4 @@
+import ElementTitle from "@/components/misc/ElementTitle";
 import ElementCube from "../components/misc/ElementCube";
 import SectionProjects from "../components/SectionProjects";
 import Splash from "../components/Splash";
@@ -14,7 +15,11 @@ export default function Page() {
 			<Splash />
 			{/* content */}
 			<ElementCube label="02" id="projects" />
-			<SectionProjects />
+
+			<ElementTitle label="Projects" />
+			{/* @ts-expect-error Async Server Component */}
+			<SectionProjects displayLimit={4} seeMore />
+
 			<div className="h-[400px]">TEST</div>
 			<div className="h-[400px] bg-red-400">TEST</div>
 		</>

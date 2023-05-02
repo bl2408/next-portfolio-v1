@@ -1,11 +1,10 @@
-import { listContents } from "@/lib/content-loader";
-import Link from "next/link";
+import SectionProjects from "@/components/SectionProjects";
 
 export default async function Page() {
-	const data = listContents({ folder: "projects" });
-	return data.map((d) => (
-		<p key={d.slug}>
-			<Link href={`projects/${d.slug}`}>{d.title}</Link>
-		</p>
-	));
+	return (
+		<>
+			{/* @ts-expect-error Async Server Component */}
+			<SectionProjects displayLimit={5} />
+		</>
+	);
 }
