@@ -9,6 +9,12 @@
 	--contentBottomPad: 80px;
 }
 
+@layer utilities {
+	.hide-sb::-webkit-scrollbar {
+		display: none;
+	}
+}
+
 @layer components {
 	.btn-base {
 		@apply relative inline-flex items-center justify-center rounded-md bg-neutral-50 px-10 py-2 text-center text-sm font-semibold
