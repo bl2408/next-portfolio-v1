@@ -77,7 +77,7 @@ export default function RootLayout({
 							</div>
 							<div
 								className="border-zinc-200 pb-[var(--contentBottomPad)]
-									trans-col-main-theme dark:border-zinc-800 max-md:px-6 md:border-l md:px-4
+									pt-3 trans-col-main-theme dark:border-zinc-800 max-md:px-6 md:border-l md:px-4
 								">
 								{children}
 							</div>
