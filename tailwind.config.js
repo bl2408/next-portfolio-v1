@@ -13,6 +13,7 @@ module.exports = {
 		screens: {
 			"2xs": "360px",
 			xs: "475px",
+			sm2: "550px",
 			...defaultTheme.screens,
 		},
 		extend: {
@@ -35,7 +36,7 @@ module.exports = {
 			addUtilities({
 				".trans-col-main-theme": {
 					transitionProperty:
-						"color, background-color, border-color, text-decoration-color,",
+						"color, background-color, border-color, text-decoration-color, opacity",
 					transitionDuration: "300ms",
 					transitionTimingFunction: "linear",
 				},
