@@ -28,19 +28,36 @@ module.exports = {
 				],
 			},
 		},
+		animMenuAppear: {
+			1: "50ms",
+			2: "100ms",
+		},
 	},
 	plugins: [
-		require(`./tailwind-plugins/highlightFx`),
-		plugin(({ addVariant, addUtilities }) => {
+		plugin(({ addVariant, matchUtilities, theme }) => {
 			addVariant("nav-open", ["html.nav-open &"]);
-			addUtilities({
-				".trans-col-main-theme": {
-					transitionProperty:
-						"color, background-color, border-color, text-decoration-color, opacity",
-					transitionDuration: "300ms",
-					transitionTimingFunction: "linear",
+
+			matchUtilities(
+				{
+					"anim-menu-appear": (value) => ({
+						transitionProperty: "transform, opacity",
+						visibility: "hidden",
+						transitionTimingFunction:
+							"cubic-bezier(0.4, 0, 0.2, 1)",
+						transitionDuration: "0ms",
+						transitionDelay: value,
+						transform: "translateY(50%)",
+						opacity: 0,
+						"html.nav-open &": {
+							visibility: "visible",
+							transform: "translateY(0%)",
+							opacity: 1,
+							transitionDuration: "200ms",
+						},
+					}),
 				},
-			});
+				{ values: theme("animMenuAppear") }
+			);
 		}),
 	],
 };

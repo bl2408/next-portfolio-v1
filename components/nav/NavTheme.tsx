@@ -1,9 +1,16 @@
 "use client";
 import { faCircleHalfStroke } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "next-themes";
-import ButtonIcon from "../misc/ButtonIcon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ReactNode } from "react";
 
-export default function NavTheme() {
+export default function NavTheme({
+	className,
+	children,
+}: {
+	className?: string;
+	children?: ReactNode;
+}) {
 	const { theme, setTheme } = useTheme();
 
 	const toggleTheme = () => {
@@ -11,10 +18,11 @@ export default function NavTheme() {
 	};
 
 	return (
-		<ButtonIcon
-			icon={faCircleHalfStroke}
+		<button
 			onClick={toggleTheme}
-			className="[&>*]:rotate-180 [&>*]:transition-transform [&>*]:dark:rotate-0"
-		/>
+			className={`[&>svg]:rotate-180 [&>svg]:transition-transform [&>svg]:dark:rotate-0 ${className}`}>
+			<FontAwesomeIcon icon={faCircleHalfStroke} className="text-xl" />
+			{children}
+		</button>
 	);
 }

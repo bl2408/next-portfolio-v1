@@ -1,34 +1,21 @@
 export default function Splash() {
 	return (
-		<div className="flex h-[calc(100vh-140px)] min-h-[400px] w-full items-center justify-center">
-			<div className="flex min-h-[60%] flex-col gap-1 sm:w-[60%]">
-				<p className="text-sm text-black dark:text-white">
-					Hi, my name is
-				</p>
-				<h1 className="animate-hl1 text-[clamp(3rem,7vw,8rem)] font-medium tracking-normal hlGradient1 text-hl-[.15rem]">
-					Brian Lambert
-				</h1>
-				<h2 className=" font-medium lg:text-lg">
-					I&apos;m a{" "}
-					<span className="text-black dark:text-white">
+		<div className="main-spacing relative mt-[var(--navTopPad)] grid min-h-[calc(100vh-var(--navTopPad))] w-full place-items-center dark:invert">
+			<div className="w-full pb-20 lg:max-w-[80%]">
+				{/* Header */}
+				<div className="text-left text-[clamp(4.2rem,14vw,12rem)] font-semibold leading-[.9em] tracking-tight text-black">
+					Brian <br /> Lambert
+				</div>
+				{/* Sub section */}
+
+				<div className="flex flex-col gap-8 border-t-[6px] border-black xs:items-end">
+					<span className="inline-block bg-black px-4 py-1 text-center text-[clamp(1.6rem,7vw,5rem)] font-medium tracking-tight text-white">
 						Software Engineer
-					</span>{" "}
-					focused on crafting high-impact web experiences.
-				</h2>
-				<div className="mt-2 h-[1px] animate-hl1 hlGradient1"></div>
-				<div className="max-w-[600px]">
-					<p className="mt-8 text-zinc-400 ">
+					</span>
+					<p className=" max-w-[650px] text-lg font-semibold tracking-wider text-black">
 						Eager to learn and to grow as a professional,
 						continuously seeking out new challenges to push myself
 						further.
-					</p>
-					<p className="mt-10 grid gap-4 xs:grid-cols-2">
-						<a href="#projects" className="btn-hl">
-							See my work
-						</a>
-						<a href="/" className="btn-basic">
-							Say hello
-						</a>
 					</p>
 				</div>
 			</div>

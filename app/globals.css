@@ -3,41 +3,146 @@
 @tailwind utilities;
 
 :root {
-	--navTopHeight: 60px;
-	--navSideWidth: 80px;
-	--navBottomHeight: 60px;
-	--contentBottomPad: 80px;
+	--navItemSize: 60px;
+	--navTopPad: 60px;
 }
 
 @layer utilities {
 	.hide-sb::-webkit-scrollbar {
 		display: none;
 	}
+
+	.scrollbar::-webkit-scrollbar,
+	.scrollbar-reverse::-webkit-scrollbar {
+		width: 16px;
+		height: 16px;
+	}
+
+	/* Scrollbar main */
+	.scrollbar::-webkit-scrollbar-track {
+		@apply bg-neutral-100 dark:bg-neutral-950;
+	}
+
+	.scrollbar::-webkit-scrollbar-button,
+	.scrollbar::-webkit-scrollbar-thumb {
+		@apply bg-neutral-100 dark:bg-neutral-950;
+		border: solid 2px black;
+	}
+
+	.dark .scrollbar::-webkit-scrollbar-button,
+	.dark .scrollbar::-webkit-scrollbar-thumb {
+		border: solid 2px white;
+	}
+
+	/* Scrollbar reverse */
+	.scrollbar-reverse::-webkit-scrollbar-track {
+		@apply bg-neutral-950 dark:bg-neutral-100;
+	}
+
+	.scrollbar-reverse::-webkit-scrollbar-button,
+	.scrollbar-reverse::-webkit-scrollbar-thumb {
+		@apply bg-neutral-950 dark:bg-neutral-100;
+		border: solid 2px white;
+	}
+
+	.dark .scrollbar-reverse::-webkit-scrollbar-button,
+	.dark .scrollbar-reverse::-webkit-scrollbar-thumb {
+		border: solid 2px black;
+	}
+
+	::-webkit-scrollbar-button:vertical:start:increment,
+	::-webkit-scrollbar-button:vertical:end:decrement,
+	::-webkit-scrollbar-button:horizontal:end:increment,
+	::-webkit-scrollbar-button:horizontal:end:decrement {
+		display: none;
+	}
 }
 
 @layer components {
-	.btn-base {
-		@apply relative inline-flex items-center justify-center rounded-md bg-neutral-50 px-10 py-2 text-center text-sm font-semibold
-		text-zinc-600 shadow-[0_0_0_2px_rgba(0,0,0,0.2)]
-		trans-col-main-theme hover:bg-opacity-90 
-		active:bg-opacity-100 dark:bg-zinc-900 dark:text-neutral-300 
-		dark:shadow-[0_0_0_1px_rgba(255,255,255,0.2)] dark:hover:bg-opacity-90
-		dark:active:bg-opacity-100;
+	.bg-theme {
+		@apply bg-neutral-50 dark:bg-neutral-950;
 	}
-	.btn-base:after {
-		@apply absolute -bottom-[1px] -left-[1px] -right-[1px] -top-[1px] -z-10 rounded-md transition-[background-position_color_background-color]
-		duration-1000 content-["_"];
+	.main-spacing {
+		@apply px-6;
 	}
-	.btn-hl {
-		@apply btn-base;
+	.navButton {
+		@apply relative flex aspect-square items-center justify-center;
+		& > svg {
+			@apply text-base text-white transition-transform;
+		}
+		&:hover > svg {
+			@apply scale-125 text-black;
+		}
+		&:hover .navHoverMenu {
+			@apply absolute top-[70%] scale-100;
+		}
 	}
-	.btn-hl:after {
-		@apply bg-[0%_0%] hlGradient1 hover:bg-[99%_99%];
+
+	.navHoverMenu {
+		@apply absolute top-[50%] flex scale-0 items-center transition-all duration-200;
+		& > div {
+			@apply flex items-center gap-2 bg-white px-2 py-1 font-mono text-[.6rem] font-bold uppercase text-black;
+		}
 	}
-	.btn-basic {
-		@apply btn-base;
+
+	.navMenuBars {
+		@apply relative h-[60%] w-[60%] origin-top-left  dark:invert;
+		& > span {
+			animation: anim-menu-bars-reverse 400ms ease-in forwards;
+			@apply absolute block h-[4px] bg-black transition-transform;
+		}
+		& > :first-child {
+			@apply top-[20%] w-[65%] delay-0;
+		}
+		& > :nth-child(2) {
+			@apply top-[50%] w-[40%];
+		}
+		& > :last-child {
+			@apply top-[80%] w-[15%] delay-0;
+		}
+
+		.nav-open & > span {
+			animation: anim-menu-bars 400ms ease-in forwards;
+		}
+		.nav-open & > :first-child {
+			@apply rotate-45 delay-300;
+		}
+		.nav-open & > :nth-child(2) {
+			@apply scale-x-0 delay-300;
+		}
+		.nav-open & > :last-child {
+			@apply -rotate-45 delay-300;
+		}
 	}
-	.btn-basic:after {
-		@apply bg-zinc-500  dark:bg-white;
+
+	.navButton .navMenuBars {
+		@apply transition-transform;
+
+		&:hover {
+			@apply scale-x-150;
+		}
+		.nav-open &:hover {
+			@apply scale-x-100;
+		}
+	}
+}
+
+@keyframes anim-no-scroll {
+	to,
+	from {
+		@apply overflow-hidden;
+	}
+}
+
+@keyframes anim-menu-bars {
+	50%,
+	100% {
+		@apply left-0 top-[50%] w-full;
+	}
+}
+@keyframes anim-menu-bars-reverse {
+	0%,
+	50% {
+		@apply left-0 top-[50%] w-full;
 	}
 }

@@ -1,9 +1,7 @@
 "use client";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import ButtonIcon from "../misc/ButtonIcon";
 
-export default function NavHamburger() {
+export default function NavHamburger({ className }: { className?: string }) {
 	const [menu, setMenu] = useState(false);
 
 	const toggleMenuClass = (bool: boolean) => {
@@ -49,10 +47,14 @@ export default function NavHamburger() {
 	}, []);
 
 	return (
-		<ButtonIcon
-			icon={menu ? faXmark : faBars}
+		<button
 			onClick={() => toggleMenu(null)}
-			className="max-sm:flex sm:hidden"
-		/>
+			className={`navButton ${className}`}>
+			<div className="navMenuBars">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</button>
 	);
 }
