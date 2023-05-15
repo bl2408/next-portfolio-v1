@@ -1,10 +1,6 @@
 import SectionProjects from "@/components/SectionProjects";
+import ElementCube from "@/components/misc/ElementCube";
 
 export default async function Page() {
-	return (
-		<>
-			{/* @ts-expect-error Async Server Component */}
-			<SectionProjects displayLimit={5} />
-		</>
-	);
+	return <>TEST</>;
 }

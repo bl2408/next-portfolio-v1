@@ -1,9 +1,30 @@
 {
-    "date": "2022-08-24",
-    "title": "Academy Xi Phase 1 Project",
-    "thumb": "axi-phase-1-thumbnail-400x400.png",
-    "tech": [
-        "HTML", "CSS", "Javascript", "JSON-Server"
-    ],
-    "content": "this is content"
+	"date": "2022-08-24",
+	"title": "Academy Xi Phase 1 Project",
+	"thumb": "axi-phase-1-thumbnail-400x400.png",
+	"shortDesc": "Our first project was to create a portfolio.",
+	"about": "About section",
+
+	"media": [
+		{ "video": "JBExSd7uA8M", "label": "Overview" },
+		{ "video": "Y_em3dKTP1s", "label": "Theme switching" },
+		{ "video": "z2otzbZx9BM", "label": "Adding to watchlist" },
+		{ "video": "vXEjgCejePs", "label": "Removing from watchlist" },
+		{ "video": "tA6jKWTdrRw", "label": "Searching" },
+		{ "video": "LqIFPI9tmOc", "label": "Offline mode" },
+		{ "video": "hoNf9uCfYR8", "label": "Responsive" },
+		{ "image": "axi-phase-1-thumbnail-400x400.png", "label": "Test image" }
+	],
+	"tech": ["HTML", "CSS", "Javascript", "JSON-Server"],
+	"links": [
+		{
+			"url": "https://bl2408.github.io/phase-1-project/",
+			"label": "Website"
+		},
+		{
+			"url": "https://github.com/bl2408/phase-1-project",
+			"label": "Source",
+			"icon": "github"
+		}
+	]
 }

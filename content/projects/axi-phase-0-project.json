@@ -1,10 +1,23 @@
 {
-    "date": "2022-08-24",
-    "title": "Academy Xi Phase 0 Project",
-    "thumb": "axi-phase-0-thumbnail-400x400.png",
-    "shortDesc": "Tasked to create a portfolio using only html and css.",
-    "tech": [
-        "HTML", "CSS", "Javascript"
-    ],
-    "content": "this is content"
+	"date": "2022-08-24",
+	"title": "Academy Xi Phase 0 Project",
+	"thumb": "axi-phase-0-thumbnail-400x400.png",
+	"shortDesc": "Our first project was to create a portfolio.",
+	"about": "About section",
+
+	"media": [
+		{ "video": "LLB74BxV53g", "label": "Overview" },
+		{ "video": "5CmOk0_uFJk", "label": "Sections" },
+		{ "video": "vWHLn5a326o", "label": "Responsive" },
+		{ "image": "axi-phase-0-thumbnail-400x400.png", "label": "Test image" }
+	],
+	"tech": ["HTML", "CSS", "Javascript"],
+	"links": [
+		{ "url": "https://bl2408.github.io/portfolio/", "label": "Website" },
+		{
+			"url": "https://github.com/bl2408/portfolio",
+			"label": "Source",
+			"icon": "github"
+		}
+	]
 }
