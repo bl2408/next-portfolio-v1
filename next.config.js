@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	async rewrites() {
+	async redirects() {
 		return [
 			{
 				source: "/cv",
-				destination: "https://resume.brianlambert.dev/",
+				destination: "https://cv.brianlambert.dev/",
+				permanent: false,
 				basePath: false,
 			},
 		];
