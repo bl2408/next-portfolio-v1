@@ -27,6 +27,12 @@ module.exports = {
 					"100svh",
 				],
 			},
+			height: {
+				screen: [
+					"100vh /* fallback for Opera, IE and etc. */",
+					"100svh",
+				],
+			},
 		},
 		animMenuAppear: {
 			1: "50ms",

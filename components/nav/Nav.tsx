@@ -15,26 +15,30 @@ const sideItems = [
 		icon: faEnvelope,
 		href: "mailto:hi@brianlambert.dev",
 		label: "Email",
+		target: "_blank",
 	},
 	{
 		icon: faIdCard,
-		href: "https://bl2408.github.io/resume-v1/",
+		href: "/cv",
 		label: "CV",
 	},
 	{
 		icon: faGithubSquare,
 		href: "https://github.com/bl2408",
 		label: "GitHub",
+		target: "_blank",
 	},
 	{
 		icon: faLinkedin,
 		href: "https://www.linkedin.com/in/bl24/",
 		label: "LinkedIn",
+		target: "_blank",
 	},
 	{
 		icon: faFileCode,
 		href: "https://github.com/bl2408/next-portfolio-v1",
 		label: "Source",
+		target: "_blank",
 	},
 ];
 
@@ -83,16 +87,20 @@ export default function Nav({
 									<li key={item.label}>
 										<Link
 											href={item.href}
-											target="_blank"
+											target={item.target}
 											className="navButton h-full hover:bg-white hover:text-black dark:invert max-xs:w-[var(--navItemSize)] xs:w-full">
 											<FontAwesomeIcon icon={item.icon} />
 											<div className="navHoverMenu">
 												<div>
 													{item.label}
-													<FontAwesomeIcon
-														icon={faExternalLink}
-														className="text-xs"
-													/>
+													{item.target && (
+														<FontAwesomeIcon
+															icon={
+																faExternalLink
+															}
+															className="text-xs"
+														/>
+													)}
 												</div>
 											</div>
 										</Link>
